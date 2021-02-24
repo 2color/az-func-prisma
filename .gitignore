@@ -46,6 +46,10 @@ typings/
 # Optional npm cache directory
 .npm
 
+# Optional npm cache directory
+.vscode 
+
+
 # Optional eslint cache
 .eslintcache
 
