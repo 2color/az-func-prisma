@@ -36,6 +36,9 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# vscode config
+.vscode/
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -47,8 +50,6 @@ typings/
 .npm
 
 # Optional npm cache directory
-.vscode 
-
 
 # Optional eslint cache
 .eslintcache

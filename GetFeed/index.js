@@ -1,19 +1,17 @@
 const prisma = require('../lib/prisma')
 
 module.exports = async function (context, req) {
-  const { postId } = context.bindingData
-
-  const publishedPost = await prisma.post.update({
+  const posts = await prisma.post.findMany({
     where: {
-      id: parseInt(postId, 10),
-    },
-    data: {
       published: true,
+    },
+    include: {
+      author: true,
     },
   })
 
   return  {
     status: 200,
-    body: publishedPost,
+    body: posts,
   }
 }

@@ -1,16 +1,22 @@
 const prisma = require('../lib/prisma')
 
 module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+  const { title, content, authorEmail } = req.body
 
-    const post = await prisma.post.create({
-        data: {
-            title: req.body.title,
-            content: req.body.content,
-        }
-    })
+  const post = await prisma.post.create({
+    data: {
+      title,
+      content,
+      published: false,
+      author: {
+        connect: {
+          email: authorEmail,
+        },
+      },
+    },
+  })
 
-    context.res = {
-        body: post
-    };
+  return  {
+    body: post,
+  }
 }

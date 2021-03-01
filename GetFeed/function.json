@@ -6,9 +6,9 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "put"
+        "get"
       ],
-      "route": "publish/{postId}"
+      "route": "feed"
     },
     {
       "type": "http",
